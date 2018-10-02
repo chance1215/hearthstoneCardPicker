@@ -5,7 +5,7 @@ var knex = require('../db/knex.js');
 module.exports = function(app){
   const store = new KnexSessionStore({
       knex: knex,
-      tablename: 'sessions' // optional. Defaults to 'sessions'
+      cards: 'sessions' // optional. Defaults to 'sessions'
   });
 
 

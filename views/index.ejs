@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h3>Add a new card</h3>
+    <form action= "/cards" method="post">
+      <input type="number" name="mana" placeholder="mana">
+      <input type="number" name="attack" placeholder="attack">
+      <input type="number" name="health" placeholder="health">
+      <input type="text"  name="description" placeholder="description">
+      <input type="submit">
+    </form>
+      <h3>Your list</h3>
+      <hr>
+      <% for(let i = 0; i<decks.length; i++){ %>
+      <div>
+        <p>Mana:<%=decks[i].mana %></p>
+        <p>Attack: <%=decks[i].attack %></p>
+        <p>Health: <%=decks[i].health %></p>
+        <p>Description: <%=decks[i].description %></p>
+        <a href="/cards/remove/<%=decks[i].id%>">Remove from Session</a>
+    </div>
+    <%}%>
+      <hr>
+      <h1>All Cards</h1>
+      <% for(let i = 0; i<cards.length; i++){ %>
+      <div>
+        <hr>
+        <p>Mana:<%=cards[i].mana %></p>
+        <p>Attack: <%=cards[i].attack %></p>
+        <p>Health: <%=cards[i].health %></p>
+        <p>Description: <%=cards[i].description %></p>
+        <a href="/cards/new/<%=cards[i].id%>">Add to Session</a>
+    </div>
+    <%}%>
+  </body>
+</html>
